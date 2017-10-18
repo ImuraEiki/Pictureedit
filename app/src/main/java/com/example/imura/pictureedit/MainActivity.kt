@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.Button
 
@@ -19,15 +20,25 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.button) as Button
         button.setOnClickListener{ view ->
-//            launchGallery()
-              launchNextActivity()
+            launchGallery()
+//              launchNextActivity()
         }
+        val button2: Button = findViewById(R.id.button2) as Button
+        button.setOnClickListener { view -> }
+            launchCamera()
+
 
     }
     private fun launchNextActivity (){
         val intent = Intent()
         intent.setClass(this, ResultActivity::class.java)
         startActivity(intent)
+    }
+
+    private void launchCamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CODE_CAMERA);
+
     }
 
 
