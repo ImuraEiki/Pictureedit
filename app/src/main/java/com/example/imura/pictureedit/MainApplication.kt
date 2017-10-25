@@ -1,6 +1,8 @@
 package com.example.imura.pictureedit
 
 import android.app.Application
+import android.content.Context
+import android.support.multidex.MultiDex
 
 import com.adobe.creativesdk.foundation.AdobeCSDKFoundation
 import com.adobe.creativesdk.foundation.auth.IAdobeAuthClientCredentials
@@ -14,6 +16,11 @@ class MainApplication : Application(), IAdobeAuthClientCredentials {
     override fun onCreate() {
         super.onCreate()
         AdobeCSDKFoundation.initializeCSDKFoundation(applicationContext)
+    }
+
+    override fun attachBaseContext(context: Context) {
+        super.attachBaseContext(context)
+        MultiDex.install(this)
     }
 
     override fun getClientID(): String {

@@ -11,6 +11,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "CREATIVE_SDK_CLIENT_ID", "${CREATIVE_SDK_CLIENT_ID}")
@@ -67,6 +68,9 @@ dependencies {
     compile 'com.localytics.android:library:3.8.0'
     compile ("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version") {
         exclude group: 'org.jetbrains', module: 'annotations'
+    }
+    compile ("com.android.support:multidex:1.0.1") {
+        exclude group: 'com.android.support', module: 'cardview-v7'
     }
 
 }
