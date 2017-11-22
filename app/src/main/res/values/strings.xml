@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Picture edit</string>
+    <string name="img_description1">image 1</string>
 </resources>

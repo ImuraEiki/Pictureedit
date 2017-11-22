@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
         if (resultCode == Activity.RESULT_OK)
-         when (resultCode) {
+         when (requestCode) {
             REQUEST_CODE_EDITOR -> {
                 editedFileUri = data?.getParcelableExtra(AdobeImageIntent.EXTRA_OUTPUT_URI)
                 Log.d(TAG, "editor editorFileUri:  " + editorFileUri)
@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    
 
 }
 

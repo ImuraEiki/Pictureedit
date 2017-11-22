@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/img_description1"
+        android:scaleType="fitXY"
+        android:src="@drawable/pictureedit" />
+
+
 
     <Button
         android:id="@+id/button"
@@ -37,6 +45,8 @@
         android:layout_marginTop="82dp"
         android:text="Let's enjoy!"
         android:textSize="50sp" />
+
+
 
 
 </RelativeLayout>
